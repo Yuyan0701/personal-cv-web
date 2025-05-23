@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta settings for character encoding and responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title shown in the browser tab -->
+  <title>Working CV</title>
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="css/working_cv.css">
+
+  <!-- Link to Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Importing fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body class="working_cv">
+  <!-- Top navigation menu -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Best Practices</a></li>
+      <li><a href="cv.html">Personalised CV</a></li>
+      <li><a href="working_cv.html" class="active">Working CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header section with name and contact placeholders -->
+  <header>
+    <h1>[ Yuyan Yang ]</h1>
+    <p>City, State ZIP | your.email@example.com | +61 4XX XXX XXX</p>
+  </header>
+
+  <!-- Education section with collapsible content -->
+  <section id="education">
+    <h2>Education Background</h2>
+    <button class="collapsible">View Education</button>
+    <div class="content">
+      <ul>
+        <li><strong>Monash University</strong>, Bachelor of Finance (Sep. 2021 - Jun. 2023)</li>
+        <li><strong>University of Western Australia (UWA)</strong>, Master of IT (Expected Nov. 2025)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Work experience section -->
+  <section id="work-experience">
+    <h2>Work Experience</h2>
+    <button class="collapsible">Show Experience</button>
+    <div class="content">
+      <ul>
+        <li><strong> 🏠 BRR Technology Solutions</strong> – Internship in web & security (Dec 2024 - Mar 2025)</li>
+        <li><strong> 🍝 Qin's Lanzhou Beef Noodle</strong> – Part-time Waitress (Sep 2024 – Now)</li>
+        <li><strong> 🥩 Costco Wholesale</strong> – Cart Attendant (Sep 2020 - Jun 2021)</li>
+        <li><strong> 🥬 Food Delivery Driver</strong> – Student Assistant (Nov 2024 – Dec 2025)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Activities and awards section -->
+  <section id="activities">
+    <h2>Activities & Awards</h2>
+    <ul>
+      <li>First-Class Scholarships at Hunan University (2020-2021)</li>
+      <li>Head of Cultural & Sports, Student Union</li>
+    </ul>
+  </section>
+
+  <!-- Languages, skills, and certificates section -->
+  <section id="skills">
+    <h2>Languages & Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Mandarin (Native), English (IELTS 6.5)</li>
+      <li><strong>Certificates:</strong> RSA, RSG, Food Safety Supervisor</li>
+    </ul>
+  </section>
+
+  <!-- Button to open career summary popup -->
+  <button id="about-btn" class="popup-btn">💼 More About My Career</button>
+
+  <!-- Popup modal with a brief personal career message -->
+  <div id="popup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Career-Oriented</h2>
+      <p>This CV is tailored for job applications and professional networking.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript for interactive elements -->
+  <script>
+    // Handle collapsible button toggles for each section
+    document.querySelectorAll('.collapsible').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active'); // Toggle active class
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Handle popup modal open and close
+    const modal = document.getElementById('popup-modal');
+    const openBtn = document.getElementById('about-btn');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Open modal on button click
+    openBtn.addEventListener('click', () => modal.style.display = 'block');
+
+    // Close modal on X click
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+    // Close modal if user clicks outside the modal content
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

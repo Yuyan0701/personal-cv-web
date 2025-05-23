@@ -1,0 +1,331 @@
+/* ---------- Working CV Styling (Theme-Matched) ---------- */
+body.working_cv {
+  background: linear-gradient(135deg, #1a1a2e, #0f3460); /* Dark blue gradient background */
+  color: #e7e7e7; /* Light text for contrast */
+  font-family: 'Playfair Display', 'Segoe UI', sans-serif; /* Elegant serif with fallback */
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.7;
+  animation: fadeIn 1s ease-in; /* Smooth page fade-in */
+}
+
+/* Page load fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Top Navigation ---------- */
+.top-nav {
+  background-color: rgba(15, 23, 42, 0.9); /* Semi-transparent dark background */
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Blurred glass effect */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.4s ease;
+}
+
+.top-nav:hover {
+  box-shadow: 0 4px 20px rgba(119, 161, 255, 0.4); /* Glow on hover */
+}
+
+.top-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-nav a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #77a1ff;
+  transition: width 0.3s ease;
+}
+
+.top-nav a:hover:before {
+  width: 100%;
+}
+
+.top-nav a:hover {
+  background-color: rgba(51, 51, 51, 0.5);
+  transform: translateY(-3px);
+}
+
+.top-nav a.active {
+  background-color: #77a1ff;
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(119, 161, 255, 0.3);
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  color: #e5e7eb;
+  animation: slideDown 0.8s ease; /* Slide header down */
+}
+
+/* Slide-in animation for header */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #77a1ff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text */
+  text-shadow: 0 2px 10px rgba(119, 161, 255, 0.3);
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: #cbd5e1;
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin-bottom: 30px;
+  padding: 25px 30px;
+  background: rgba(30, 41, 59, 0.75); /* Semi-dark card style */
+  border-radius: 16px;
+  border: 1px solid rgba(119, 161, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+}
+
+section h2 {
+  font-size: 1.6rem;
+  color: #a5b4fc;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* Underline accent for section headings */
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #77a1ff, transparent);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  transition: transform 0.2s ease;
+}
+
+ul li:hover {
+  transform: translateX(3px);
+}
+
+/* ---------- Collapsible Buttons ---------- */
+.collapsible {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #f5f5f5;
+  cursor: pointer;
+  padding: 14px 20px;
+  border: 1px solid rgba(119, 161, 255, 0.3);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* + icon for collapsibles */
+.collapsible:after {
+  content: '\002B'; /* + */
+  color: #77a1ff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+/* - icon when expanded */
+.collapsible.active:after {
+  content: '\2212'; /* − */
+  transform: rotate(180deg);
+}
+
+.collapsible:hover {
+  background: linear-gradient(135deg, #334155, #475569);
+  transform: translateY(-3px);
+}
+
+.content {
+  display: none;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: rgba(30, 41, 59, 0.7);
+  border-left: 3px solid #60a5fa;
+  border-radius: 8px;
+  border: 1px solid rgba(119, 161, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Popup Button ---------- */
+.popup-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: float 3s infinite alternate;
+}
+
+/* Floating effect for CTA button */
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.popup-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* ---------- Modal Popup ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px); /* Subtle blur on modal open */
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: #f5f5f5;
+  margin: 10% auto;
+  padding: 35px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 480px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: slideIn 0.5s ease;
+  position: relative;
+}
+
+/* Close button style */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #a5b4fc;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #f8fafc;
+  transform: rotate(90deg);
+}
+
+/* Modal slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ---------- Responsive Styles ---------- */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+  }
+
+  .top-nav ul {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .popup-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  body {
+    padding: 20px;
+  }
+}

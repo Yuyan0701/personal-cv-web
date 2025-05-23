@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font imports for visual design -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Page title shown in the browser tab -->
+  <title>Personalised CV</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="css/cv_style.css">
+</head>
+
+<body>
+  <!-- Top navigation linking to main pages -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html">Best Practices</a></li>
+      <li><a href="cv.html" class="active">Personalised CV</a></li>
+      <li><a href="working_cv.html" class="active">Working CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section-specific navigation for in-page jumps -->
+  <nav class="cv-nav">
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#references">References</a>
+    <!-- Print page as PDF -->
+    <a id="download-btn" href="#" onclick="window.print(); return false;">Download PDF</a>
+  </nav>
+
+  <!-- Header section with name and contact info -->
+  <header>
+    <h1>[ Yuyan Yang ]</h1>
+    <p>City, State ZIP | your.email@example.com | +61 4XX XXX XXX</p>
+    <img src="jpg/profile.jpg" alt="[Your Profile Photo]">
+  </header>
+
+  <!-- Objective summary -->
+  <section id="objective">
+    <h2>Objective</h2>
+    <p>Pursuing a Master of Information Technology at the University of Western Australia, with a focus on software systems.</p>
+  </section>
+
+  <!-- Education background with collapsible content -->
+  <section id="education">
+    <h2>Education</h2>
+    <button class="collapsible">View Education Details</button>
+    <div class="content">
+      <ul>
+        <li><strong>Work Integrated Learning</strong>, LET Training (Present)</li>
+        <li><strong>Bachelor of Finance</strong>, Monash University (2021 - 2023)</li>
+        <li><strong>Bachelor of Management</strong>, Hunan University (2019 - 2021)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Project experience -->
+  <section id="projects">
+    <h2>Academic Projects</h2>
+    <button class="collapsible">View Project Highlights</button>
+    <div class="content">
+      <ul>
+        <li><strong>Simulating Stock Trading:</strong> Options strategies, volatility analysis, MATLAB reporting.</li>
+        <li><strong>Avian Influenza Model:</strong> SEIRD model with agent simulation & intervention strategy.</li>
+        <li><strong>Social Media Data Analysis:</strong> Python, clustering, correlation, data storytelling.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certification section -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li><strong>ACCA Qualification</strong> – Association of Chartered Certified Accountants, June 2023</li>
+    </ul>
+  </section>
+
+  <!-- Work experience with collapsible content -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <button class="collapsible">Show Experience</button>
+    <div class="content">
+      <ul>
+        <li><strong>BRR Technology Solutions</strong>, Sydney: Web optimization, database design, secure backend (PDAS)</li>
+        <li><strong>Teaching Assistant</strong>, Gaosi Education Group: Assisted English lessons, student engagement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Technical and Soft Skills with Icons and Progress Bars -->
+<section id="skills">
+  <h2><i class="fa-solid fa-gears"></i> Skills</h2>
+
+  <h3><i class="fa-solid fa-laptop-code"></i> Technical Skills</h3>
+  <ul class="skill-list">
+    <li>
+      <i class="fa-brands fa-html5"></i> HTML
+      <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-brands fa-css3-alt"></i> CSS
+      <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-brands fa-js"></i> JavaScript
+      <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-brands fa-python"></i> Python
+      <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-solid fa-database"></i> SQL
+      <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-brands fa-java"></i> Java
+      <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-brands fa-linux"></i> Linux
+      <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+    </li>
+    <li>
+      <i class="fa-solid fa-shield-halved"></i> Cybersecurity
+      <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+    </li>
+  </ul><br>
+
+  <h3><i class="fa-solid fa-user-group"></i> Soft Skills</h3>
+  <ul class="skill-list">
+    <li><i class="fa-solid fa-comments"></i> Communication</li>
+    <li><i class="fa-solid fa-arrows-rotate"></i> Adaptability</li>
+    <li><i class="fa-solid fa-people-group"></i> Teamwork</li>
+    <li><i class="fa-solid fa-rocket"></i> Initiative</li>
+  </ul>
+
+  <h3><i class="fa-solid fa-language"></i> Languages</h3>
+  <ul class="skill-list">
+    <li><i class="fa-solid fa-globe"></i> English (Fluent)</li>
+    <li><i class="fa-solid fa-globe"></i> Mandarin (Native)</li>
+  </ul>
+</section>
+
+  <!-- Description of how AI tools were used during development -->
+  <section id="ai-usage">
+    <h2>Use of AI Assistance and References</h2>
+    <p>
+      During the development of this website for the CITS5505 unit, I used OpenAI's <strong>ChatGPT (GPT-4)</strong> as a supplementary tool to support and enhance my learning and implementation of best web development practices.
+    </p>
+    <p>
+      AI assistance was used for:
+    </p>
+      <ul>
+        <li>Clarifying modern HTML, CSS, and JavaScript best practices</li>
+        <li>Debugging HTML and CSS errors flagged by W3C validators</li>
+        <li>Improving accessibility and semantic structure</li>
+        <li>Creating responsive design recommendations for better design</li>
+        <li>Providing sugguestions of JavaScript for modal dialogs, form validation, and dynamic UI interactions</li>
+        <li>Providing explanations and alternatives for code refactoring</li>
+      </ul>
+ 
+
+    <p>
+      All content generated with AI was critically reviewed, manually verified, and adapted by me to meet project requirements and maintain academic integrity. AI did not generate any final content without oversight.
+    </p>
+
+    <!-- Tools and resources used -->
+    <h3>Referenced Tools and Libraries</h3>
+    <ul>
+      <li><a href="https://www.chartjs.org" target="_blank">Chart.js</a> – Used for rendering interactive bar charts.</li>
+      <li><a href="https://validator.w3.org" target="_blank">W3C HTML Validator</a> – Used to validate HTML syntax and structure.</li>
+      <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a> – Used to validate CSS stylesheets.</li>
+      <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a> – Fonts "Inter" and "Playfair Display" were imported for typography.</li>
+      <li><a href="https://dog.ceo/dog-api/" target="_blank">Dog CEO API</a> – Used for loading a surprise dog image as part of the rewards section.</li>
+      <li><a href="https://github.com/features/copilot" target="_blank">GitHub Copilot</a> – Used to assist with code completion and generation.</li>
+    </ul>
+
+    <!-- APA-formatted references -->
+    <h3>APA-Style References</h3>
+    <ul>
+      <li>OpenAI. (2024). <em>ChatGPT (March 2025 version)</em> [ Large language model ]. https://chat.openai.com/</li>
+      <li>Chart.js Contributors. (n.d.). <em>Chart.js</em>. https://www.chartjs.org</li>
+      <li>W3C. (n.d.). <em>Markup Validation Service</em>. https://validator.w3.org</li>
+      <li>W3C. (n.d.). <em>CSS Validation Service</em>. https://jigsaw.w3.org/css-validator/</li>
+      <li>Google. (n.d.). <em>Google Fonts</em>. https://fonts.google.com</li>
+      <li>Dog CEO. (n.d.). <em>Dog CEO's Dog API</em>. https://dog.ceo/dog-api/</li>
+      <li>GitHub. (n.d.). <em>GitHub Copilot</em>. https://github.com/features/copilot</li>
+    </ul>
+  </section>
+
+  <!-- Button to trigger modal popup with personal info -->
+  <button id="about-btn" class="popup-btn">💬 Click to learn more about me!</button>
+
+  <!-- Modal popup content -->
+  <div id="popup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>🎉 Hello again!</h2>
+      <p>I’m someone who enjoys blending logic and creativity. Outside of IT, I love 🎭 acting, 🎤 singing, and discovering cafes ☕️.</p>
+      <p>This website is a reflection of who I am — thoughtful, detail-oriented, and passionate.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Yuyan Yang. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for collapsibles and modal interaction -->
+  <script>
+    // Handle collapsible section toggles
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(button => {
+      button.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+
+    // Handle modal open and close
+    const modal = document.getElementById('popup-modal');
+    const btn = document.getElementById('about-btn');
+    const closeBtn = document.querySelector('.close-btn');
+
+    btn.addEventListener('click', () => modal.style.display = 'block');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

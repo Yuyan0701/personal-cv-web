@@ -1,0 +1,573 @@
+/* ---------- Global Styles ---------- */
+body {
+    /* Dark gradient background and typography settings */
+    background-color: #1a1a2e;
+    background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #e7e7e7;
+    font-family: 'Playfair Display', 'Segoe UI', sans-serif;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.7;
+    transition: all 0.5s ease;
+    animation: fadeIn 1s ease-in; /* Smooth fade-in */
+}
+
+footer {
+    text-align:center; 
+    margin-top: 40px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Headings with hover animation */
+h1, h2, h3 {
+    color: #f1f1f1;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    transform: translateX(5px);
+}
+
+/* Section hover effect */
+section {
+    margin-bottom: 30px;
+    transition: all 0.4s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+/* Image styling (e.g. profile photo) */
+img {
+    width: 150px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 3px solid #f5f5f5;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    animation: pulse 2s infinite alternate; /* Glowing animation */
+}
+
+@keyframes pulse {
+    from { box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    to { box-shadow: 0 12px 30px rgba(119, 161, 255, 0.5); }
+}
+
+img:hover {
+    transform: scale(1.05);
+    border-color: #77a1ff;
+}
+
+/* Basic list formatting */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: translateX(3px);
+}
+
+/* Section reference divider */
+.reference {
+    border-top: 1px solid #444;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  .skill-list li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    color: #e7e7e7;
+  }
+  
+  .skill-list li i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #77a1ff;
+    font-size: 1.3rem;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #77a1ff;
+    border-radius: 8px;
+    transition: width 1s ease-in-out;
+  }
+  
+  #skills h2, #skills h3 {
+    margin-bottom: 15px;
+    color: #a5b4fc;
+  }
+  
+  #skills h2 i, #skills h3 i {
+    margin-right: 8px;
+  }  
+
+/* ---------- Navigation Bar ---------- */
+.top-nav {
+    background-color: rgba(15, 23, 42, 0.9);
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.4s ease;
+}
+
+.top-nav:hover {
+    box-shadow: 0 4px 20px rgba(119, 161, 255, 0.4);
+}
+
+.top-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover underline animation */
+.top-nav a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #77a1ff;
+    transition: width 0.3s ease;
+}
+
+.top-nav a:hover:before {
+    width: 100%;
+}
+
+.top-nav a:hover {
+    background-color: rgba(51, 51, 51, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Highlight active link */
+.top-nav a.active {
+    background-color: #77a1ff;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(119, 161, 255, 0.3);
+}
+
+/* ---------- CV Navigation Buttons ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+.cv-nav {
+    text-align: center;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cv-nav a,
+#download-btn,
+#toggle-cv-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #f5f5f5;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(119, 161, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Light streak hover effect */
+.cv-nav a:after,
+#download-btn:after,
+#toggle-cv-btn:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20px;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(20deg);
+    transition: all 0.6s ease;
+}
+
+.cv-nav a:hover:after,
+#download-btn:hover:after,
+#toggle-cv-btn:hover:after {
+    left: 100%;
+}
+
+.cv-nav a:hover,
+#download-btn:hover,
+#toggle-cv-btn:hover {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #77a1ff;
+}
+
+/* Highlighted toggle button */
+#toggle-cv-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    margin-top: 20px;
+    animation: highlight 2s infinite alternate;
+}
+
+@keyframes highlight {
+    0% { box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
+    100% { box-shadow: 0 8px 24px rgba(59, 130, 246, 0.7); }
+}
+
+#toggle-cv-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+}
+
+/* ---------- Collapsible Sections ---------- */
+.collapsible {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #f5f5f5;
+    cursor: pointer;
+    padding: 14px 20px;
+    border: 1px solid rgba(119, 161, 255, 0.3);
+    border-radius: 8px;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Plus/Minus toggle icons */
+.collapsible:after {
+    content: '\002B'; /* plus */
+    color: #77a1ff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.collapsible.active:after {
+    content: '\2212'; /* minus */
+    transform: rotate(180deg);
+}
+
+.collapsible:hover {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    transform: translateY(-3px);
+}
+
+/* Collapsible content */
+.content {
+    padding: 18px 24px;
+    display: none;
+    overflow: hidden;
+    background-color: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    border: 1px solid rgba(119, 161, 255, 0.2);
+    margin-bottom: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform-origin: top;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: scaleY(0); opacity: 0; }
+    to { transform: scaleY(1); opacity: 1; }
+}
+
+/* List within collapsible */
+.content ul {
+    margin-top: 10px;
+}
+
+.content li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.content li:hover {
+    color: #f5f5f5;
+}
+
+/* ---------- Popup Button and Modal ---------- */
+.popup-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.popup-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Modal overlay and content */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #f5f5f5;
+    margin: 10% auto;
+    padding: 35px;
+    border-radius: 16px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.5s ease, glow 3s infinite alternate;
+    border: 1px solid rgba(119, 161, 255, 0.3);
+}
+
+/* Modal animations */
+@keyframes glow {
+    0% { box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
+    100% { box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    color: #a5b4fc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #f5f5f5;
+    transform: rotate(90deg);
+}
+
+/* ---------- Alternate Light Theme for Working CV ---------- */
+.working-cv {
+    background-color: #f5f5f5;
+    color: #1a1a2e;
+}
+
+.working-cv h1, .working-cv h2, .working-cv h3 {
+    color: #1a1a2e;
+}
+
+/* Override dark styles in working view */
+.working-cv .collapsible, 
+.working-cv .content, 
+.working-cv .cv-nav a, 
+.working-cv #download-btn,
+.working-cv #toggle-cv-btn {
+    background: white;
+    color: #1a1a2e;
+    border-color: #ddd;
+}
+
+.working-cv .collapsible:hover, 
+.working-cv .cv-nav a:hover, 
+.working-cv #download-btn:hover,
+.working-cv #toggle-cv-btn:hover {
+    background: #f5f5f5;
+    color: #1e40af;
+}
+
+.working-cv .modal-content {
+    background: white;
+    color: #1a1a2e;
+}
+
+.working-cv .close-btn {
+    color: #666;
+}
+
+/* ---------- AI Usage Section Styling ---------- */
+#ai-usage {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-left: 5px solid #77a1ff;
+    padding: 30px 40px;
+    margin-top: 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+#ai-usage h2 {
+    color: #77a1ff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+}
+
+#ai-usage h3 {
+    color: #cbd5e1;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#ai-usage p {
+    color: #e2e8f0;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+#ai-usage ul {
+    padding-left: 25px;
+}
+
+#ai-usage li {
+    color: #d1d5db;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#ai-usage li::before {
+    content: "✔";
+    color: #77a1ff;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    margin-left: -25px;
+}
+
+#ai-usage a {
+    color: #93c5fd;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#ai-usage a:hover {
+    color: #60a5fa;
+}
+
+/* ---------- Responsive Styles ---------- */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p, li {
+        font-size: 0.95rem;
+    }
+
+    .cv-nav {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cv-nav a,
+    #download-btn,
+    #toggle-cv-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p, li {
+        font-size: 0.9rem;
+    }
+
+    body {
+        padding: 20px;
+    }
+}

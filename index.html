@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and mobile responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Fonts for styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Page title and CSS/JS links -->
+  <title>Best Coding Practices</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- External libraries: jQuery and Chart.js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Top navigation bar -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html" class="active">Best Practices</a></li>
+      <li><a href="#" id="cv-modal-trigger">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Modal dialog to choose CV version -->
+  <div id="cv-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Choose Your CV</h2>
+      <p>Select the version you'd like to view:</p>
+      <div class="cv-nav">
+        <a href="cv.html">📄 Personalised CV</a>
+        <a href="working_cv.html">💼 Working CV</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page header -->
+  <header>
+    <h1>Web Development Best Practices</h1>
+    <p>Select the practices your website follows. A surprise awaits if you meet 12 or more!</p>
+  </header>
+
+  <main>
+    <!-- Buttons for quick actions -->
+    <div id="summary-buttons">
+      <button id="select-all-button">Select All</button>
+      <button id="reset-button">Reset</button>
+    </div>
+
+    <!-- Main checklist section -->
+    <section id="practices">
+      <h2>Checklist</h2>
+
+      <!-- HTML Practices -->
+      <article>
+        <h3>HTML Best Practices</h3>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="semantic-html" data-group="HTML"> Use semantic HTML elements</label>
+          <p>Semantic elements help improve accessibility and SEO by adding structure to your content.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="alt-attributes" data-group="HTML"> Use descriptive alt text for images</label>
+          <p>Alt text improves accessibility for screen readers and helps search engines index images.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="form-labels" data-group="HTML"> Use label elements with form inputs</label>
+          <p>Labels improve usability, especially for assistive technologies.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="meta-tags" data-group="HTML"> Include essential meta tags</label>
+          <p>Meta tags help with responsiveness and SEO optimization.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="html-valid" data-group="HTML"> Validate HTML using W3C</label>
+          <p>W3C validation ensures your code is standard-compliant and cross-browser compatible.</p>
+        </div>
+      </article>
+
+      <!-- CSS Practices -->
+      <article>
+        <h3>CSS Best Practices</h3>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="external-css" data-group="CSS"> Use external stylesheets</label>
+          <p>Keeping CSS in external files improves maintainability and reusability.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="responsive" data-group="CSS"> Make the design responsive</label>
+          <p>Responsive designs ensure good user experience on all devices.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="naming" data-group="CSS"> Use meaningful class names</label>
+          <p>Descriptive class names help make your code more readable and easier to maintain.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="no-inline" data-group="CSS"> Avoid inline styles</label>
+          <p>Inline styles reduce maintainability and should be avoided.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="css-valid" data-group="CSS"> Validate CSS</label>
+          <p>Validation helps you catch typos and enforce clean syntax.</p>
+        </div>
+      </article>
+
+      <!-- JavaScript Practices -->
+      <article>
+        <h3>JavaScript Best Practices</h3>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="modular-js" data-group="JS"> Modularize JavaScript files</label>
+          <p>Modular code is easier to manage and scale in larger projects.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="dom-cache" data-group="JS"> Cache DOM queries</label>
+          <p>Improves performance by avoiding repeated DOM lookups.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="event-delegate" data-group="JS"> Use event delegation</label>
+          <p>Efficiently handles dynamic elements using a single event listener.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="try-catch" data-group="JS"> Implement error handling</label>
+          <p>Prevents crashes and improves robustness using try-catch blocks.</p>
+        </div>
+
+        <div class="practice">
+          <label><input type="checkbox" class="practice-check" data-id="es6" data-group="JS"> Use ES6+ features</label>
+          <p>Modern syntax enhances readability and aligns with current standards.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Summary section with image/audio rewards -->
+    <section id="summary-section">
+      <h2 id="summary">You have met 0/15 best practices</h2>
+      <p id="success-message" style="display:none;">🎉 Excellent! You've met our success criteria!</p>
+      <p id="failure-message" style="display:none;">😢 Oops! You need to meet at least 12 best practices.</p>
+
+      <!-- Surprise image -->
+      <figure style="display: none;" id="animal-figure">
+        <img id="reward-img" src="images/placeholder.jpg" alt="Surprise animal image" style="max-width: 300px;">
+        <figcaption>Photo from <a href="https://dog.ceo" target="_blank">dog.ceo</a></figcaption>
+      </figure>
+
+      <!-- Summary chart -->
+      <canvas id="chart" width="400" height="200" style="margin-top: 30px;"></canvas>
+
+      <!-- Reward sound -->
+      <audio id="success-sound" src="jpg/bg_music.mp3" preload="auto"></audio>
+    </section>
+  </main>
+
+  <!-- Custom JavaScript file -->
+  <script src="js/script.js"></script>
+
+  <!-- Modal logic script -->
+  <script>
+    const modalTrigger = document.getElementById('cv-modal-trigger');
+    const modal = document.getElementById('cv-modal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Show modal on trigger click
+    modalTrigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+    });
+
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Close modal if clicking outside modal content
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
